@@ -1,17 +1,21 @@
+
 class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
-  helper_method :current_user, :current_account, :current_order
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  protect_from_forgery with: :exception
+  helper_method :current_order
+  helper_method :current_user
 
   def current_order
-      if session[:order_id]
-        Order.find(session[:order_id])
-      else
-        Order.new
-      end
+    if session[:order_id]
+      Order.find(session[:order_id])
+    else
+      Order.new
     end
+  end
 
   protected
 

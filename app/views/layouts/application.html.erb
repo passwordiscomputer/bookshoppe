@@ -12,7 +12,8 @@
   <body>
     <h1>Andrew and Chase SuperStore.com</h1>
     <%= render "layouts/navigation" %>
-
+    <%= flash[:notice] %>
+    <%= flash[:error] %>
     <%= yield %>
   </body>
 </html>

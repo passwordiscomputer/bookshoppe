@@ -2,6 +2,7 @@
 
   <%= link_to "SIGN UP", new_user_registration_path %>
   <%= link_to "SIGN IN", new_user_session_path %>
+  <%= link_to "Cart", cart_path %>
 
 <% if current_user %>
   Hello, <%=current_user.name %>
