@@ -1,12 +1,17 @@
-<h1>Andrew and Chase SuperStore.com</h1>
-
-  <%= link_to "SIGN UP", new_user_registration_path %>
-  <%= link_to "SIGN IN", new_user_session_path %>
-  <%= link_to "Cart", cart_path %>
-
-<% if current_user %>
-  Hello, <%=current_user.name %>
-  <%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
-
-<% end %>
-<a href="/">HOME</a>
+<div class="nav-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo" href="/">HOME</a>
+      <ul id="nav-mobile" class="left ">
+        <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+        <li><%= link_to "SIGN IN", new_user_session_path %> <%= current_order.order_items.count %></li>
+        <li><%= link_to "Cart", cart_path %></li>
+        <% if current_user %>
+          <li>Hello, <%=current_user.name %>
+            <%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
