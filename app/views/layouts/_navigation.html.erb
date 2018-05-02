@@ -1,0 +1,11 @@
+<h1>Andrew and Chase SuperStore.com</h1>
+
+  <%= link_to "SIGN UP", new_user_registration_path %>
+  <%= link_to "SIGN IN", new_user_session_path %>
+
+<% if current_user %>
+  Hello, <%=current_user.name %>
+  <%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete %>
+
+<% end %>
+<a href="/">HOME</a>
